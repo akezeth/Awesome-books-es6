@@ -28,6 +28,13 @@
     <div class="decoration"></div>
   </section>
 
+  <section id="add-books" class="container flex column invisible">
+    <h2>Add a new book</h2>
+    <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
+    <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
+    <button disabled class="disabled" type="button" id="add">ADD</button>
+  </section>
+
 </body>
 <script src="./index.js"></script>
 </html>
