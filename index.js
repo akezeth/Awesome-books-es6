@@ -1,26 +1,39 @@
-const displaySection = (sectionNumber) => {
-  const booksList = document.querySelector('#awesome-books');
-  const addBooks = document.querySelector('#add-books');
-  const contact = document.querySelector('#contact');
-  const nav1 = document.querySelector('.nav1');
-  const nav2 = document.querySelector('.nav2');
-  const nav3 = document.querySelector('.nav3');
+import { grabBooks } from './modules/grabBooks.js';
+import isValidInput from './modules/isValidInput.js';
+import { displayAllBooks, displayBook } from './modules/displayBooks.js';
+import Book from './modules/Book.js';
+import { DateTime } from './modules/Luxon.js';
 
-  booksList.classList.remove('visible');
-  addBooks.classList.remove('visible');
-  contact.classList.remove('visible');
-  nav1.classList.remove('active');
-  nav2.classList.remove('active');
-  nav3.classList.remove('active');
+const books = grabBooks();
+displayAllBooks(books);
 
-  if (sectionNumber === 1) {
-    booksList.classList.add('visible');
-    nav1.classList.add('active');
-  } else if (sectionNumber === 2) {
-    addBooks.classList.add('visible');
-    nav2.classList.add('active');
-  } else {
-    contact.classList.add('visible');
-    nav3.classList.add('active');
-  }
-}
+const links = document.querySelectorAll('.nav');
+
+links.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    links.forEach((link) => {
+      link.classList.remove('active');
+    });
+    link.classList.add('active');
+
+    const booksList = document.querySelector('#awesome-books');
+    const addBooks = document.querySelector('#add-books');
+    const contact = document.querySelector('#contact');
+    booksList.classList.remove('invisible');
+    addBooks.classList.remove('invisible');
+    contact.classList.remove('invisible');
+    const index = parseInt(e.target.dataset.nav, 10);
+    if (index === 0) {
+      const books = grabBooks();
+      displayAllBooks(books);
+      addBooks.classList.add('invisible');
+      contact.classList.add('invisible');
+    } else if (index === 1) {
+      booksList.classList.add('invisible');
+      contact.classList.add('invisible');
+    } else {
+      booksList.classList.add('invisible');
+      addBooks.classList.add('invisible');
+    }
+  });
+});
