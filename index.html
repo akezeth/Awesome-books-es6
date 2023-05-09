@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+<body">
+  <header class="header flex column">
+    <div class="topNav flex">
+      <h1 href="#" class="logo">Awesome Books</h1>
+        <ul class="navbar flex">
+            <li><a href="#" class="nav active" data-nav="0">List</a></li>
+            <li><a href="#" class="nav" data-nav="1">Add new</a></li>
+            <li><a href="#" class="nav" data-nav="2">Contact</a></li>
+        </ul>
+    </div>
+    <div class="bottomNav flex">
+      <p id="current_date"></p>
+    </div>
+  </header>
+
+  <section id="awesome-books" class="container flex column">
+    <h2>All awesome books</h2>
+    <ul class="books flex column"></ul>
+    <div class="decoration"></div>
+  </section>
+
+  <section id="add-books" class="container flex column invisible">
+    <h2>Add a new book</h2>
+    <input onkeyup="isValid()" type="text" id="title" name="title" placeholder="Title" required>
+    <input onkeyup="isValid()" type="text" id="author" name="author" placeholder="Author" required>
+    <button disabled class="disabled" type="button" id="add">ADD</button>
+  </section>
+
+  <section id="contact" class="container flex column invisible">
+    <h2>Contact Information</h2>
+    <p class="p-top">Do have any questions or you just want to say "Hello"?</p>
+    <p class="p-bot">You can reach out to me!</p>
+    <div class="contactList">
+      <p>- My e-mail : </p>
+      <ul>
+        <li><a href="#">akezeth@gmail.com</a></li>
+      </ul>
+      <p>- Phone number : </p>
+      <ul>
+        <li>+251 912321074</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer">
+      <h3>Copyright &copy; ...</h3>
+    </div>
+  </footer>
+
+</body>
+<script type="module" src="./index.js"></script>
+</html>
