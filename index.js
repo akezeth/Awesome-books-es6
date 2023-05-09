@@ -51,3 +51,6 @@ btn.addEventListener('click', () => {
   document.querySelector('#author').value = '';
   isValidInput();
 });
+
+const currentDate = document.getElementById('current_date');
+currentDate.innerText = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
