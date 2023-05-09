@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="./index.css">
   <title>Document</title>
 </head>
-<body onload="isValid()">
+<body">
   <header class="header flex column">
     <div class="topNav flex">
       <h1 href="#" class="logo">Awesome Books</h1>
         <ul class="navbar flex">
-            <li><a href="#" onclick="displaySection(1)" class="nav1 active">List</a></li>
-            <li><a href="#" onclick="displaySection(2)" class="nav2">Add new</a></li>
-            <li><a href="#" onclick="displaySection(3)" class="nav3">Contact</a></li>
+            <li><a href="#" class="nav active" data-nav="0">List</a></li>
+            <li><a href="#" class="nav" data-nav="1">Add new</a></li>
+            <li><a href="#" class="nav" data-nav="2">Contact</a></li>
         </ul>
     </div>
     <div class="bottomNav flex">
@@ -58,5 +58,5 @@
   </footer>
 
 </body>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>
 </html>
