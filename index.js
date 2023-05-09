@@ -37,3 +37,17 @@ links.forEach((link) => {
     }
   });
 });
+
+const btn = document.getElementById('add');
+
+btn.addEventListener('click', () => {
+  const books = grabBooks();
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const newBook = new Book(title, author);
+  books.add(newBook);
+  displayBook(newBook, books.size - 1);
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  isValidInput();
+});
